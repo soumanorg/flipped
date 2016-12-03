@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Project name</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="starter-template">
+    <h1>Bootstrap starter template</h1>
+  <div class="row">
+    <div class="col-md-4 col-xs-4"><div class="abc"><img id="test" class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5554/30588613393_3190d5338d_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5461/30588613853_2782b33e10_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5821/30588614163_52fd176ef9_m.jpg"></div></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5524/30588615293_5ff60c71e0_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5773/31026941760_32340f1cc3_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5712/31026941860_a079790879_m.jpg"></div></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5507/31026942000_6a59d96bc2_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5659/31251990332_658d548ec5_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5792/31395905555_87373f72f9_m.jpg"></div></div>
+  </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script type="text/javascript">
+  var hideOriginal = function(){
+    jQuery(".original_image").addClass("hide");
+    jQuery(".dummy_image").removeClass("hide");
+  };
+  setTimeout(hideOriginal, 2000);
+  jQuery(".dummy_image").on('click', function(){
+    jQuery(this).parent().find(".original_image").removeClass("hide");
+    jQuery(this).addClass("hide");
+  });
+</script>
