@@ -59,7 +59,7 @@
   };
   var setCountDn = function(){
     jQuery("#header-text").html("You have <span id='counter' class='red'>15</span> seconds to remember the images");
-    countdown(5);
+    countdown(15);
   };
 
   jQuery(".dummy_image").on('click', function(){
@@ -77,7 +77,7 @@
       type: "GET",
       complete: function(){
         setCountDn();
-        setTimeout(hideOriginal, 5000);
+        setTimeout(hideOriginal, 15000);
       }
     });
   });
@@ -104,8 +104,8 @@
   var showSample = function(){
     if (alreadyFound.length == 9){
       endDate = new Date().getTime();
-      var timeDiff = endDate - statDate;
-      alert("Congrats!!! You have found all the images in "+timeDiff+" miliseconds. Click Ok to start a fresh game");
+      var timeDiff = (endDate - statDate)/1000;
+      alert("Congrats!!! You have found all the images in "+timeDiff+" seconds. Click Ok to start a fresh game");
       location.reload();
       return;
     }
