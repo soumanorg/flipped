@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'home/index'
   root 'home#index'
-
+  match '/fetch_pictures' => 'home#fetch_pictures', :as => :fetch_pictures, via: [:get]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -18,16 +17,6 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
 
   # Example resource route with sub-resources:
   #   resources :products do

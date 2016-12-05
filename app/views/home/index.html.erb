@@ -7,50 +7,115 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Project name</a>
+      <a class="navbar-brand" href="#">Flipped</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
+    <!--<div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="#">Flipped</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div><!--/.nav-collapse -->
-  </div>
+    </div>
+  </div>-->
 </nav>
 
-<div class="container">
-
+<div class="container xyz">
   <div class="starter-template">
-    <h1>Bootstrap starter template</h1>
+    <h1 id="header-text" class="text-center">Loading images...</h1>
+    <div class="row row-sample hide">
+      <h1 class="text-center">Click on the correct position of the image</h1>
+      <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4">
+        <div class="abc"><img class="" height="200" width="200"></div>
+      </div>
+    </div>
   <div class="row">
-    <div class="col-md-4 col-xs-4"><div class="abc"><img id="test" class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5554/30588613393_3190d5338d_m.jpg"></div></div>
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5461/30588613853_2782b33e10_m.jpg"></div></div>
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5821/30588614163_52fd176ef9_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img1" data-index="1"><div id="test" class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img2" data-index="2"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img3" data-index="3"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5524/30588615293_5ff60c71e0_m.jpg"></div></div>
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5773/31026941760_32340f1cc3_m.jpg"></div></div>
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5712/31026941860_a079790879_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img4" data-index="4"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img5" data-index="5"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img6" data-index="6"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5507/31026942000_6a59d96bc2_m.jpg"></div></div>
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5659/31251990332_658d548ec5_m.jpg"></div></div>
-    <div class="col-md-4 col-xs-4"><div class="abc"><img class="dummy_image hide" src="assets/300.jpg"><img class="original_image" src="https://farm6.staticflickr.com/5792/31395905555_87373f72f9_m.jpg"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img7" data-index="7"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img8" data-index="8"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
+    <div class="col-md-4 col-xs-4"><div class="abc" id="flipped-img9" data-index="9"><div class="dummy_image hide"></div><img class="original_image" src="" height="200" width="200"></div></div>
   </div>
-
+  <div class="dummy_container hide" data-foo=""></div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script type="text/javascript">
+  var currentIndex = 0;
+  var alreadyFound = [];
+  var statDate;
+  var endDate;
   var hideOriginal = function(){
     jQuery(".original_image").addClass("hide");
     jQuery(".dummy_image").removeClass("hide");
   };
-  setTimeout(hideOriginal, 2000);
+  var setCountDn = function(){
+    jQuery("#header-text").html("You have <span id='counter' class='red'>15</span> seconds to remember the images");
+    countdown(5);
+  };
+
   jQuery(".dummy_image").on('click', function(){
-    jQuery(this).parent().find(".original_image").removeClass("hide");
-    jQuery(this).addClass("hide");
+    var imgIndex = jQuery(this).parent().data("index");
+    if(imgIndex == currentIndex){
+      jQuery(this).parent().find(".original_image").removeClass("hide");
+      jQuery(this).addClass("hide");
+      showSample();
+    }
   });
+
+  jQuery( document ).ready(function() {
+    jQuery.ajax({
+      url: "<%= fetch_pictures_path %>",
+      type: "GET",
+      complete: function(){
+        setCountDn();
+        setTimeout(hideOriginal, 5000);
+      }
+    });
+  });
+
+  var countdown = function(seconds) {
+    function tick() {
+        //This script expects an element with an ID = "counter". You can change that to what ever you want. 
+        var counter = document.getElementById("counter");
+        counter.innerHTML = String(seconds);
+        seconds--;
+        if( seconds >= 0 ) {
+            setTimeout(tick, 1000);
+        }
+        else{
+          jQuery(".row-sample").removeClass("hide");
+          jQuery("#header-text").addClass("hide");
+          showSample();
+          statDate = new Date().getTime();
+        }
+    }
+    tick();
+  }
+
+  var showSample = function(){
+    if (alreadyFound.length == 9){
+      endDate = new Date().getTime();
+      var timeDiff = endDate - statDate;
+      alert("Congrats!!! You have found all the images in "+timeDiff+" miliseconds. Click Ok to start a fresh game");
+      location.reload();
+      return;
+    }
+    while (1) {
+     currentIndex = Math.floor(Math.random() * 9) + 1;
+     if(jQuery.inArray(currentIndex, alreadyFound) == -1){
+      alreadyFound.push(currentIndex);
+      break;
+     }
+    }
+    jQuery(".row-sample img").attr("src", js_array[0][currentIndex]);
+  }
 </script>
