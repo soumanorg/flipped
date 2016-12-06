@@ -50,13 +50,13 @@
     }
   });
 
-  jQuery( document ).ready(function() {
+  jQuery(document).ready(function() {
     jQuery.ajax({
       url: "<%= fetch_pictures_path %>",
       type: "GET",
       complete: function(){
-        setCountDn();
-        setTimeout(hideOriginal, 15000);
+        setTimeout(setCountDn, 1000);
+        setTimeout(hideOriginal, 16000);
       }
     });
     jQuery(".original_image").height(jQuery(jQuery(".original_image")[0]).width());
