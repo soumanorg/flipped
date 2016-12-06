@@ -1,5 +1,6 @@
 <% for i in 1..9 %>
   jQuery("#flipped-img<%= i.to_s %> .original_image").attr("src", "<%= j @img_src[i] %>");
+  jQuery("#flipped-img<%= i.to_s %> .original_image").attr("height", "<%= j @img_src[i] %>");
 <% end %>
 
 var js_array = [<%= raw @img_src.to_json %>];

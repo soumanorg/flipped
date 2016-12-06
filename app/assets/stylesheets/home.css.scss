@@ -6,9 +6,20 @@
 }
 
 .dummy_image{
-  height: 80px;
-  width: 80px;
+  width: 90%;
   background-color: #e2e2e2;
+}
+
+.original_image{
+  width: 90%;
+}
+
+.sample_image{
+  width: 90%;
+}
+
+.bold{
+  font-weight: bold;
 }
 
 .xyz{
@@ -16,8 +27,16 @@
   padding-botton: 40px;
 }
 
+.has-below{
+  padding-bottom: 10px;
+}
+
 .red{
   color: red;
+}
+
+.jumbotron{
+  min-height: 600px;
 }
 
 /* Space out content a bit */
@@ -25,6 +44,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -100,17 +120,3 @@ body {
   }
 }
 
-
-/*!
- * IE10 viewport hack for Surface/desktop Windows 8 bug
- * Copyright 2014-2015 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
-/*
- * See the Getting Started docs for more information:
- * http://getbootstrap.com/getting-started/#support-ie10-width
- */
-@-ms-viewport     { width: device-width; }
-@-o-viewport      { width: device-width; }
-@viewport         { width: device-width; }

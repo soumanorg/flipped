@@ -16,4 +16,10 @@ class HomeController < ApplicationController
       @img_src << item["media"]["m"]
     end
   end
+
+  def about
+  end
+
+  def contact
+  end
 end
